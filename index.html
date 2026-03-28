@@ -24,55 +24,225 @@
     />
     <link rel="stylesheet" href="styles.css" />
 
-    <!-- Local SEO Schema -->
+    <!-- Structured Data: LocalBusiness + WebSite -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "Plumber",
-        "name": "FlowRight Plumbing",
-        "image": "images/hero.jpg",
-        "description": "24/7 emergency plumbing services for residential and commercial customers",
-        "telephone": "+15551234567",
-        "email": "contact@flowrightplumbing.com",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "123 Main Street",
-          "addressLocality": "Springfield",
-          "addressRegion": "IL",
-          "postalCode": "62701",
-          "addressCountry": "US"
-        },
-        "openingHoursSpecification": [
+        "@graph": [
           {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": [
-              "Monday",
-              "Tuesday",
-              "Wednesday",
-              "Thursday",
-              "Friday"
+            "@type": "Plumber",
+            "@id": "https://flowrightplumbing.com/#business",
+            "name": "FlowRight Plumbing",
+            "url": "https://flowrightplumbing.com",
+            "logo": "https://flowrightplumbing.com/images/logo.png",
+            "image": "https://flowrightplumbing.com/images/hero.jpg",
+            "description": "24/7 emergency plumbing services for residential and commercial customers. Licensed, insured, and trusted by 2000+ customers in Springfield, IL.",
+            "telephone": "+15551234567",
+            "email": "contact@flowrightplumbing.com",
+            "priceRange": "$$",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "123 Main Street",
+              "addressLocality": "Springfield",
+              "addressRegion": "IL",
+              "postalCode": "62701",
+              "addressCountry": "US"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": "39.7817",
+              "longitude": "-89.6501"
+            },
+            "areaServed": {
+              "@type": "GeoCircle",
+              "geoMidpoint": {
+                "@type": "GeoCoordinates",
+                "latitude": "39.7817",
+                "longitude": "-89.6501"
+              },
+              "geoRadius": "40234"
+            },
+            "sameAs": [
+              "https://facebook.com/flowrightplumbing",
+              "https://instagram.com/flowrightplumbing",
+              "https://twitter.com/flowrightplumbing"
             ],
-            "opens": "07:00",
-            "closes": "18:00"
+            "openingHoursSpecification": [
+              {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": [
+                  "Monday",
+                  "Tuesday",
+                  "Wednesday",
+                  "Thursday",
+                  "Friday"
+                ],
+                "opens": "07:00",
+                "closes": "18:00"
+              },
+              {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Saturday"],
+                "opens": "08:00",
+                "closes": "16:00"
+              },
+              {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Sunday"],
+                "opens": "08:00",
+                "closes": "16:00"
+              }
+            ],
+            "hasOfferCatalog": {
+              "@type": "OfferCatalog",
+              "name": "Plumbing Services",
+              "itemListElement": [
+                {
+                  "@type": "OfferCatalog",
+                  "name": "Emergency Repairs",
+                  "description": "Burst pipes, water leaks, and urgent issues — available 24/7 with fast response times."
+                },
+                {
+                  "@type": "OfferCatalog",
+                  "name": "Leak Detection",
+                  "description": "Advanced camera technology to locate hidden leaks without unnecessary digging."
+                },
+                {
+                  "@type": "OfferCatalog",
+                  "name": "Water Heater Service",
+                  "description": "Repairs, maintenance, and upgrades to tankless and traditional water heaters."
+                },
+                {
+                  "@type": "OfferCatalog",
+                  "name": "Drain Cleaning",
+                  "description": "Professional drain cleaning, unclogging, and video inspection services."
+                },
+                {
+                  "@type": "OfferCatalog",
+                  "name": "Fixture Installation",
+                  "description": "Sink, faucet, toilet, and fixture upgrades for bathrooms and kitchens."
+                },
+                {
+                  "@type": "OfferCatalog",
+                  "name": "System Upgrades",
+                  "description": "Complete repiping, sump pump installation, and full system modernization."
+                }
+              ]
+            },
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "5.0",
+              "reviewCount": "147"
+            },
+            "review": [
+              {
+                "@type": "Review",
+                "author": { "@type": "Person", "name": "Sarah Martinez" },
+                "reviewRating": {
+                  "@type": "Rating",
+                  "ratingValue": "5",
+                  "bestRating": "5"
+                },
+                "reviewBody": "My basement flooded on a Sunday morning right before my daughter's birthday party. Absolute nightmare. Called three guys who never answered, but FlowRight picked up on the second ring. Todd parked in the driveway twenty minutes later, found the valve, and actually fixed the split pipe while we were setting up folding chairs upstairs. Unbelievable hustle."
+              },
+              {
+                "@type": "Review",
+                "author": { "@type": "Person", "name": "James Chen" },
+                "reviewRating": {
+                  "@type": "Rating",
+                  "ratingValue": "5",
+                  "bestRating": "5"
+                },
+                "reviewBody": "Our 15-year-old tank basically disintegrated and flooded the garage. The technician walked me through the difference between a new tank and going tankless without being weirdly pushy about upsells. Went with the tankless. The hot water pressure is crazy now."
+              },
+              {
+                "@type": "Review",
+                "author": { "@type": "Person", "name": "Maria Rodriguez" },
+                "reviewRating": {
+                  "@type": "Rating",
+                  "ratingValue": "5",
+                  "bestRating": "5"
+                },
+                "reviewBody": "I generally hate dealing with contractors because I always feel scammed by the end, but these guys are totally straight shooters. They re-piped the guest bathroom fast, their cleanup was actually thorough, and the bill matched the quote exactly. I'll definitely call them again."
+              },
+              {
+                "@type": "Review",
+                "author": { "@type": "Person", "name": "Tom Bradley" },
+                "reviewRating": {
+                  "@type": "Rating",
+                  "ratingValue": "5",
+                  "bestRating": "5"
+                },
+                "reviewBody": "I manage twelve rentals around Fayetteville. Before finding FlowRight, finding a reliable plumber was my biggest headache. Now I just shoot them a text when a tenant calls with a clog or a leak, and they handle everything directly with the tenant. Worth every penny."
+              }
+            ]
           },
           {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": ["Saturday"],
-            "opens": "08:00",
-            "closes": "16:00"
-          },
-          {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": ["Sunday"],
-            "opens": "08:00",
-            "closes": "16:00"
+            "@type": "WebSite",
+            "@id": "https://flowrightplumbing.com/#website",
+            "name": "FlowRight Plumbing",
+            "url": "https://flowrightplumbing.com",
+            "publisher": { "@id": "https://flowrightplumbing.com/#business" }
           }
-        ],
-        "aggregateRating": {
-          "@type": "AggregateRating",
-          "ratingValue": "5.0",
-          "reviewCount": "147"
-        }
+        ]
+      }
+    </script>
+
+    <!-- Structured Data: FAQPage -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How quickly can you respond to emergency calls?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Our average emergency response time is 2 hours or less, available 24/7. Call (555) 123-4567 to dispatch a technician immediately."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do you provide a warranty on your work?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes! All our work comes with a 1-year workmanship warranty. If anything isn't right, we come back and fix it at no charge."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Are you licensed and insured?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Absolutely. We hold active state plumbing licenses and carry $2M in general liability coverage. References and certificates available upon request."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What payment methods do you accept?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "We accept cash, check, all major credit cards, and financing options. We also work with most insurance claims."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I know if I have a hidden leak?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Signs include: higher than normal water bills, damp patches on walls or ceilings, mold growth, or hissing sounds. We use advanced camera technology to locate hidden leaks without unnecessary digging."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What area do you serve?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "We service Springfield and the surrounding 25-mile radius, including both residential and commercial properties."
+            }
+          }
+        ]
       }
     </script>
   </head>
@@ -135,29 +305,30 @@
             <span>Available Right Now</span>
           </div>
 
-            <h3>It's Sunday. <br />Water is Filling the Basement.</h3>
-            <h1 class="hero-title">
-              You Need a Plumber.<br /><span
-                class="hero-highlight"
-                >Right Now.</span
-              >
-            </h1>
+          <h3>It's Sunday. <br />Water is Filling the Basement.</h3>
+          <h1 class="hero-title">
+            You Need a Plumber.<br /><span class="hero-highlight"
+              >Right Now.</span
+            >
+          </h1>
 
-            <p class="hero-description">
-              Things break. Usually at 2 AM. We don't care what time it is, and we aren't going to charge you triple just because you're having a bad day. We'll be there in under two hours to fix it.
+          <p class="hero-description">
+            Things break. Usually at 2 AM. We don't care what time it is, and we
+            aren't going to charge you triple just because you're having a bad
+            day. We'll be there in under two hours to fix it.
+          </p>
+
+          <div class="hero-cta">
+            <button class="btn btn-primary" data-modal="quote-form">
+              Send a Plumber Now: (555) 123-4567
+            </button>
+            <p class="hero-subtext">
+              Average response time: 54 minutes | Dispatching 24/7
             </p>
-
-            <div class="hero-cta">
-              <button class="btn btn-primary" data-modal="quote-form">
-                Send a Plumber Now: (555) 123-4567
-              </button>
-              <p class="hero-subtext">
-                Average response time: 54 minutes | Dispatching 24/7
-              </p>
-            </div>
           </div>
         </div>
-      </header>
+      </div>
+    </header>
 
     <!-- Trust Signals -->
     <section class="trust-signals">
@@ -209,7 +380,8 @@
         <div class="section-header">
           <h2>We Know the Panic is Real</h2>
           <p class="section-lead">
-            Water in your house is wildly stressful. If it's not fixed fast, it ruins things.
+            Water in your house is wildly stressful. If it's not fixed fast, it
+            ruins things.
           </p>
         </div>
 
@@ -223,9 +395,15 @@
             />
             <h3>The Burst Pipe</h3>
             <p>
-              Water is relentless. It seeps into drywall and warps your floors. Waiting even a few hours turns a plumbing bill into a massive home renovation project.
+              Water is relentless. It seeps into drywall and warps your floors.
+              Waiting even a few hours turns a plumbing bill into a massive home
+              renovation project.
             </p>
-            <p><span class="problem-highlight">Turn off your main valve and call us.</span></p>
+            <p>
+              <span class="problem-highlight"
+                >Turn off your main valve and call us.</span
+              >
+            </p>
           </div>
 
           <div class="problem-card">
@@ -237,7 +415,9 @@
             />
             <h3>No Hot Water</h3>
             <p>
-              Taking an ice-cold shower before a Tuesday morning meeting is terrible. You shouldn't have to boil water just to wash your kids or clean dishes.
+              Taking an ice-cold shower before a Tuesday morning meeting is
+              terrible. You shouldn't have to boil water just to wash your kids
+              or clean dishes.
             </p>
             <p>
               <span class="problem-highlight"
@@ -255,7 +435,9 @@
             />
             <h3>The Backed-Up Drain</h3>
             <p>
-              First it drains slowly, then it completely backs up. Sewage in your home is a major health hazard and smells horrible. Plungers won't fix this securely.
+              First it drains slowly, then it completely backs up. Sewage in
+              your home is a major health hazard and smells horrible. Plungers
+              won't fix this securely.
             </p>
             <p>
               <span class="problem-highlight"
@@ -269,13 +451,16 @@
           <h3>The Cost of Waiting</h3>
           <ul class="failure-list">
             <li>
-              <i class="fas fa-exclamation-triangle"></i> Water destroys subfloors incredibly fast.
+              <i class="fas fa-exclamation-triangle"></i> Water destroys
+              subfloors incredibly fast.
             </li>
             <li>
-              <i class="fas fa-exclamation-triangle"></i> Mold claims can get denied by your insurance policy.
+              <i class="fas fa-exclamation-triangle"></i> Mold claims can get
+              denied by your insurance policy.
             </li>
             <li>
-              <i class="fas fa-exclamation-triangle"></i> Many emergency dispatchers will gouge you when you're desperate.
+              <i class="fas fa-exclamation-triangle"></i> Many emergency
+              dispatchers will gouge you when you're desperate.
             </li>
           </ul>
         </div>
@@ -289,7 +474,11 @@
           <div class="guide-intro">
             <h2>We Aren't Salesmen.<br />We're Mechanics.</h2>
             <p>
-              For 15 years, our crew has been digging trenches and fixing pipes across Northwest Arkansas. We don't employ pushy commissioned sales guys tracking mud onto your carpet. We strictly hire experienced local plumbers who fix things correctly the first time.
+              For 15 years, our crew has been digging trenches and fixing pipes
+              across Northwest Arkansas. We don't employ pushy commissioned
+              sales guys tracking mud onto your carpet. We strictly hire
+              experienced local plumbers who fix things correctly the first
+              time.
             </p>
           </div>
 
@@ -306,13 +495,19 @@
             <h3>Why We're Different</h3>
             <ul class="guide-list">
               <li>
-                <strong>We pick up the phone.</strong> It sounds basic, but how many local contractors just let it go to voicemail? If you call us, we answer.
+                <strong>We pick up the phone.</strong> It sounds basic, but how
+                many local contractors just let it go to voicemail? If you call
+                us, we answer.
               </li>
               <li>
-                <strong>Transparent Pricing.</strong> We actually inspect the problem, hand you a firm quote, and wait for your go-ahead. Zero surprise charges on the final bill.
+                <strong>Transparent Pricing.</strong> We actually inspect the
+                problem, hand you a firm quote, and wait for your go-ahead. Zero
+                surprise charges on the final bill.
               </li>
               <li>
-                <strong>Firm 1-Year Guarantee.</strong> If the drain clogs again or the fitting leaks, we come right back and fix it on our own dime. No arguments.
+                <strong>Firm 1-Year Guarantee.</strong> If the drain clogs again
+                or the fitting leaks, we come right back and fix it on our own
+                dime. No arguments.
               </li>
             </ul>
 
@@ -682,7 +877,12 @@
               </div>
             </div>
             <blockquote>
-              "My basement flooded on a Sunday morning right before my daughter's birthday party. Absolute nightmare. Called three guys who never answered, but FlowRight picked up on the second ring. Todd parked in the driveway twenty minutes later, found the valve, and actually fixed the split pipe while we were setting up folding chairs upstairs. Unbelievable hustle."
+              "My basement flooded on a Sunday morning right before my
+              daughter's birthday party. Absolute nightmare. Called three guys
+              who never answered, but FlowRight picked up on the second ring.
+              Todd parked in the driveway twenty minutes later, found the valve,
+              and actually fixed the split pipe while we were setting up folding
+              chairs upstairs. Unbelievable hustle."
             </blockquote>
           </div>
 
@@ -706,7 +906,11 @@
               </div>
             </div>
             <blockquote>
-              "Our 15-year-old tank basically disintegrated and flooded the garage. The technician walked me through the difference between a new tank and going tankless without being weirdly pushy about upsells. Went with the tankless. The hot water pressure is crazy now."
+              "Our 15-year-old tank basically disintegrated and flooded the
+              garage. The technician walked me through the difference between a
+              new tank and going tankless without being weirdly pushy about
+              upsells. Went with the tankless. The hot water pressure is crazy
+              now."
             </blockquote>
           </div>
 
@@ -730,7 +934,11 @@
               </div>
             </div>
             <blockquote>
-              "I generally hate dealing with contractors because I always feel scammed by the end, but these guys are totally straight shooters. They re-piped the guest bathroom fast, their cleanup was actually thorough, and the bill matched the quote exactly. I'll definitely call them again."
+              "I generally hate dealing with contractors because I always feel
+              scammed by the end, but these guys are totally straight shooters.
+              They re-piped the guest bathroom fast, their cleanup was actually
+              thorough, and the bill matched the quote exactly. I'll definitely
+              call them again."
             </blockquote>
           </div>
 
@@ -754,7 +962,11 @@
               </div>
             </div>
             <blockquote>
-              "I manage twelve rentals around Fayetteville. Before finding FlowRight, finding a reliable plumber was my biggest headache. Now I just shoot them a text when a tenant calls with a clog or a leak, and they handle everything directly with the tenant. Worth every penny."
+              "I manage twelve rentals around Fayetteville. Before finding
+              FlowRight, finding a reliable plumber was my biggest headache. Now
+              I just shoot them a text when a tenant calls with a clog or a
+              leak, and they handle everything directly with the tenant. Worth
+              every penny."
             </blockquote>
           </div>
         </div>
@@ -975,8 +1187,11 @@
           <p>&copy; 2026 FlowRight Plumbing. All rights reserved.</p>
           <p>Licensed | Insured | Available 24/7 for Emergencies</p>
           <p>
-            Built by <span style="color: #f0f0f0">Local Search</span>
-            <span style="color: #7bafd4">Ally</span>
+            Built by
+            <a href="https://localsearchally.com" target="_blank" rel="noopener"
+              ><span style="color: #f0f0f0">Local Search</span>
+              <span style="color: #7bafd4">Ally</span></a
+            >
           </p>
         </div>
       </div>
